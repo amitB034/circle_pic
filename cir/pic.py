@@ -15,11 +15,13 @@ def ciercle_pic():
     mask = Image.new('L', image.size, 0)
     draw = ImageDraw.Draw(mask)
 
-    h, w = image.size
+    w, h = image.size
+    print(image.size)
     center_x, center_y = w // 2, h // 2
-    radius = min(w, h) // 4  # 幅と高さの最小値を基に半径を設定
+    radius = min(h, w) // 4  # 幅と高さの最小値を基に半径を設定
+    print(w,h)
     print(radius)
-    print(center_x - radius)
+    print(center_x ,center_y)
 
     draw.ellipse((center_x - radius, center_y - radius, center_x + radius, center_y + radius), fill=255)
 
